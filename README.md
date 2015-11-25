@@ -1,7 +1,9 @@
 RecSys Challenge 2016
 =====================
 
-About: Job Recommendations (preliminary description)
+**_Notice: this is a preliminary description. Details will follow soon._**
+
+About: Job Recommendations 
 --------------------------
 
 **In short:** given a XING user, the goal is to predict those job postings that a user will click on. 
@@ -13,7 +15,7 @@ recommendation system is to predict those job postings that are likely to be rel
 In order to fulfill this task, various data sources can be exploited as listed below. 
 
 
-Datasets (preliminary description)
+Datasets 
 ---------
 
 A more detailed description will follow soon.  
@@ -57,7 +59,7 @@ of experience.
 more than 1 Million anonymized users and more than 500k job postings will be released for analysis and training. 
 
 
-Procedure (preliminary description) 
+Procedure
 -----------
 
 We would like to do a mix of _"offline evaluation"_ and _"online evaluation"_. Details will follow soon. 
