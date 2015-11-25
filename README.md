@@ -6,13 +6,10 @@ RecSys Challenge 2016
 About: Job Recommendations 
 --------------------------
 
-**In short:** given a XING user, the goal is to predict those job postings that a user will click on. 
+Given a XING user, the goal of the RecSys challenge is to develop a recommender system that predicts 
+those job postings that a user will click on. 
 
-**In Detail:** XING is a social network for business. People use XING, for example, to find a job and 
-recruiters use XING to find the right candidate for a job. At the moment, XING has more than 15 Million 
-users and around 1 Million job postings on the platform. Given a user, the goal of the job 
-recommendation system is to predict those job postings that are likely to be relevant to the user. 
-In order to fulfill this task, various data sources can be exploited as listed below. 
+Background: [http://2016.recsyschallenge.com/](http://2016.recsyschallenge.com/)
 
 
 Datasets 
@@ -57,19 +54,4 @@ of experience.
 
 **Current plan:** One large dataset that covers more than 20 Million interactions (possibly from a time period of around 6 months), 
 more than 1 Million anonymized users and more than 500k job postings will be released for analysis and training. 
-
-
-Procedure
------------
-
-We would like to do a mix of _"offline evaluation"_ and _"online evaluation"_. Details will follow soon. 
-
-
-Organizers
------------
-
-- [Fabian Abel](http://fabianabel.de), [XING AG](https://xing.com)
-- [Daniel Kohlsdorf](https://www.xing.com/profile/Daniel_Kohlsdorf), [XING AG](https://xing.com)
-- [Martha Larson](http://homepage.tudelft.nl/q22t4/), [TU Delft](http://mmc.tudelft.nl/)
-- ...
 
