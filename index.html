@@ -13,6 +13,7 @@
 
     <!-- CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/ekko-lightbox.min.css" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet">
 
   </head>
@@ -31,7 +32,7 @@
         <span style="float:left; padding-right: 15px;">
           <img src="./images/logo.png" alt="logo" width="50"/>
         </span>
-        <h3><a href="http://recsyschallenge.github.io/2016/" style="text-decoration:none;">ACM RecSys Challenge 2016</a></h3>
+        <h3><a href="http://2016.recsyschallenge.com" style="text-decoration:none;">ACM RecSys Challenge 2016</a></h3>
       </div>
 
       
@@ -43,13 +44,32 @@
           recruiters use XING to find the right candidate for a job. At the moment, XING has more than 15 Million users and around 
           1 Million job postings on the platform. Given a user, the goal of the job recommendation system is to predict those job 
           postings that are likely to be relevant to the user. In order to fulfill this task, various data sources can be exploited.
+          Job recommendations are displayed on <a href="https://www.xing.com/">xing.com</a> as well as in XING's <a href="https://mobile.xing.com/en/">mobile apps</a>.
         </p>
       </div>
 
-      <div style="text-align:center;">
-        <img src="./images/challenge.png" width="250"/>
-      </div>
-      <div>
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="row">
+                <a href="./images/job-recos-1-startpage.png" data-toggle="lightbox" data-gallery="multiimages" data-title="Job recommendations on the startpage (xing.com)" class="col-sm-2">
+                    <img src="./images/thumb-job-recos-1-startpage.png" class="img-responsive">
+                </a>
+                <a href="./images/job-recos-2-jobmarket.png" data-toggle="lightbox" data-gallery="multiimages" data-title="Job recommendatation on xing.com/jobs" class="col-sm-3">
+                    <img src="./images/thumb-job-recos-2-jobmarket.png" class="img-responsive">
+                </a>
+                <a href="./images/job-recos-3-mobile.png" data-toggle="lightbox" data-gallery="multiimages" data-title="Job recommendations in mobile app" class="col-sm-2">
+                    <img src="./images/thumb-job-recos-3-mobile.png" class="img-responsive">
+                </a>
+                <a href="./images/job-details-mobile.png" data-toggle="lightbox" data-gallery="multiimages" data-title="Job advertisement in mobile app" class="col-sm-2">
+                    <img src="./images/thumb-job-details-mobile.png" class="img-responsive">
+                </a>
+                <a href="./images/job-details-web.png" data-toggle="lightbox" data-gallery="multiimages" data-title="Job advertisement on the Web" class="col-sm-2">
+                    <img src="./images/thumb-job-details-web.png" class="img-responsive">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div>
         <h1>Challenge</h1>
         <p class="lead"><strong>Task:</strong> given a XING user, the goal is to predict those job postings that a user will click on.</p>
         <p class="lead">
@@ -60,9 +80,8 @@
         <p class="lead">
           <i>Details will follow soon.</i>
         </p>
-      </div>
+    </div>
 
-    
       <div>
         <h1>Dataset</h1>
         <p class="lead">
@@ -94,7 +113,7 @@
           <li><a href="http://fabianabel.de">Fabian Abel</a>, <a href="https://xing.com">XING AG</a></li>
           <li><a href="https://www.xing.com/profile/Daniel_Kohlsdorf">Daniel Kohlsdorf</a>, <a href="https://xing.com">XING AG</a></li>
           <li><a href="http://homepage.tudelft.nl/q22t4/">Martha Larson</a>, <a href="http://mmc.tudelft.nl/">TU Delft</a></li>
-          <li>...</li>
+          <li><a href="https://dms.sztaki.hu/en/people/robert-palovics">Róbert Pálovics</a>, <a href="https://dms.sztaki.hu/en">Hungarian Academy of Sciences</a></li>
         </ul>
       </div>
 
@@ -118,6 +137,13 @@
     <!-- JavaScript -->
     <script src="./js/jquery-1.11.3.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/ekko-lightbox.min.js"></script>
+    <script type="text/javascript">
+    $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    }); 
+    </script>
   </body>
 </html>
 
