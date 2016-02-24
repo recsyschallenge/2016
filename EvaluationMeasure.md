@@ -19,6 +19,8 @@ for the leaderboard.
 - *Solution:* `S` = The task is to compile a list of interactions close to the ground truth list. Teams should predict up to 30 interactions for each of the 150k target users. The 30 interactions should be represented as an ordered list of items that should be recommended to the user.
   + `S(u) = recommendedItems` = ordered list of items that are recommended to user `u` (may be empty if no items are recommended to the user)
 
+**score(S, G):**
+
 ```javascript
 //main scoring function: 
 function score(S, G) = {
