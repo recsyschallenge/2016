@@ -177,7 +177,7 @@ Details about the job postings that were and should be recommended to the users.
 
 The file [target_users.csv](https://recsys.xing.com/data/target_users) contains those user IDs for which you 
 finally need to [submit solutions](https://recsys.xing.com/submission). The file lists one user ID per line 
-(in total, 150,000 user IDs). 
+(in total, 150,000 user IDs). All those target users are also contained in the training data (see [User](#users)).
 
 ### Example Solution File
 
