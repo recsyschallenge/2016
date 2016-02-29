@@ -54,7 +54,7 @@ function recall(recommendedItems, relevantItem) = {
 
 //user success = was at least one relevant item recommended for a given user?
 function userSuccess(recommendedItems, relevantItem) = {
-  if (intersect(recommendedItems, relevantItems) > 0)
+  if (intersect(recommendedItems.take(30), relevantItems) > 0)
     1.0
   else 
     0.0
