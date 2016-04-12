@@ -1,7 +1,7 @@
 Authors: F. Abel, D. Kohlsdorf, R. Pálovics
 
-Training Data
-==========================
+ACM RecSys Challenge 2016: Training Data
+====================================
 
 - [About](#about)
 - [Anonymization, pseudonymization, noise](#anonymization-pseudonymization-noise)
