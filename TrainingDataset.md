@@ -1,3 +1,5 @@
+Authors: F. Abel, D. Kohlsdorf, R. Pálovics
+
 Training Data
 ==========================
 
