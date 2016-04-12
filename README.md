@@ -1,5 +1,5 @@
-RecSys Challenge 2016
-=====================
+ACM RecSys Challenge 2016
+=========================
 
 About: Job Recommendations 
 --------------------------
