@@ -26,9 +26,9 @@ Dear RecSys 2016 Challenge Participant,
 The RecSys 2016 Challenge is proceeding very well. We are very happy to see such a high number of active teams (more than 300 teams registered and 100 teams submitted solutions). 
 An overview of deadlines and additional info about the Challenge is available at: http://2016.recsyschallenge.com However, we would like to highlight the following points:
 
-#### Deadline for submitting Challenge solutions: 26 June (Just under one weeks to go!)
+#### Challenge Deadline: June 26th (23:59 Hawaiian time)
 
-We are impressed with what we have been seeing on the leaderboard, but we point out that there is ample opportunity for further improvement. By our estimates, the current top score is approx. 300k points below the recommender currently in use by XING.
+The deadline for submitting Challenge solutions is approaching: 26 June (Just under one weeks to go!). We are impressed with what we have been seeing on the leaderboard, but we point out that there is ample opportunity for further improvement. By our estimates, the current top score is approx. 300k points below the recommender currently in use by XING.
 
 #### RecSys Challenge Workshop, Paper Submissions
 
