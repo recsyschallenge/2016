@@ -31,7 +31,7 @@ Fabian Abel\\
 András Benczúr\\
        \affaddr{Hungarian Academy of Sciences}\\
        \affaddr{Budapest, Hungary}\\
-       \affaddr{benczur@info.ilab.sztaki.hu}
+       \affaddr{benczur@sztaki.hu}
 \and
 Daniel Kohlsdorf\\
        \affaddr{XING AG}\\
@@ -46,19 +46,16 @@ Martha Larson\\
 Róbert Pálovics\\
        \affaddr{Hungarian Academy of Sciences}\\
        \affaddr{Budapest, Hungary}\\
-       \affaddr{rpalovics@info.ilab.sztaki.hu}
+       \affaddr{palovics@sztaki.hu}
 }
 
 \maketitle
 \begin{abstract}
-The 2016 ACM Recommender Systems Challenge focussed on the problem of 
-job recommendations. Given a large XING dataset consisting of anonymized 
-user profiles, job postings, interactions and impressions, the participating teams had to 
-predict job postings that a user will interact with. 
+The 2016 ACM Recommender Systems Challenge focused on the problem of job recommendations.
+Given a large dataset from XING that consisted of anonymized user profiles, job postings, and interactions between them, the participating teams had to predict job postings that a user will interact with. 
 
-The challenge ran for four months, 366 teams registered and 119 of those teams participated 
-actively and submitted together 4232 solutions yielding in an impressive neck-and-neck race 
-which was decided within the last days of the challenge.
+The challenge ran for four months with a final 366 registered teams.
+The number of active teams were 119 and they have submitted together 4232 solutions yielding in an impressive neck-and-neck race that was decided within the last days of the challenge.
 \end{abstract}
 
 
@@ -104,26 +101,18 @@ which was decided within the last days of the challenge.
 % We no longer use \terms command
 %\terms{Theory}
 
-\keywords{Recommender Systems; Challenge}
+\keywords{Recommender Systems; Data Mining Challenge}
 
 \section{Introduction}
-The ACM RecSys Challenge allows researchers and practitioners around the 
-world to jointly work on real-world recommender systems problems in various 
-domains such as movie recommendations~\cite{recsyschallenge:2014} or 
-product recommendations~\cite{recsyschallenge:2015}. 
-In 2016, the challenge was dedicated to the problem of 
-job recommendations\footnote{\url{http://2016.recsyschallenge.com}}~\cite{job:recommendations}. 
-Therefore, we released a large dataset from XING\footnote{\url{http://xing.com}} 
-which is a business-oriented social network with around 18~Million users world-wide 
-and more than 10~Million users in Germany. 
+The ACM RecSys Challenge allows researchers and engineers around the 
+world to jointly work on real-world recommender system problems in various domains such as social media related recommendations~\cite{recsyschallenge:2014} or product recommendations~\cite{recsyschallenge:2015}. 
+In 2016, the challenge was dedicated to the problem of job recommendation\footnote{\url{http://2016.recsyschallenge.com}}~\cite{job:recommendations}. 
+We released a large dataset from XING\footnote{\url{http://xing.com}} that is a business-oriented social network with around 18~Million users world-wide and more than 10~Million users in Germany. 
 
-XING supports people in discovering career opportunities. Job recommendations 
-are therefore an integral element of the XING platform and the mobile apps. Those recommendations 
-typically aim to satisfy the demands of both job seekers who have certain 
-wishes concerning their next career step and recruiters who aim to 
-hire the most appropriate candidate for a job. In this challenge, we focussed on 
-the demands of the job seekers and particularly on the following task:
-{\em given a XING user, the recommender algorithms had to predict those job postings that a user will interact with (e.g. click, bookmark).}
+XING supports people in discovering career opportunities, hence the job recommendation system is an essential part of the XING platform.
+The provided recommendations aim to satisfy the demands of both the job seekers who have certain preferences concerning their next career step and the recruiters who aim to hire the most appropriate candidate for a given job.
+In this challenge, we focused on the demands of the job seekers by defining the following task:
+{\em given a XING user, the recommender algorithms had to predict those job postings that a user will positively interact with by clicking or bookmarking.}
 
   
 \section{Dataset}
