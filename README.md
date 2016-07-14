@@ -19,6 +19,16 @@ Pointers:
 News
 -----
 
+### July 14th: Reminder regarding paper submissions
+
+This is a reminder that the deadline for the corresponding workshop 
+papers in which you describe your solutions is next week: **July 20th**.
+
+Instructions: [paper-submissions](http://2016.recsyschallenge.com/#paper-submissions)
+
+We are looking forward to your papers and seeing you in Boston! 
+
+
 ### June 22: Final Sprint, Paper Submissions
 
 Dear RecSys 2016 Challenge Participant, 
