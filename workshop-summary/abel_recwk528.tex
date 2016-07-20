@@ -45,7 +45,8 @@ Daniel Kohlsdorf\\
 \alignauthor 
 Martha Larson\\
        \affaddr{TU Delft}\\
-       \affaddr{Delft, Netherlands}\\
+       \affaddr{Radboud University Nijmegen}\\
+              \affaddr{Netherlands}\\
        \affaddr{m.a.larson@tudelft.nl}
 \alignauthor 
 Róbert Pálovics\\
@@ -57,10 +58,12 @@ Róbert Pálovics\\
 \maketitle
 \begin{abstract}
 The 2016 ACM Recommender Systems Challenge focused on the problem of job recommendations.
-Given a large dataset from XING that consisted of anonymized user profiles, job postings, and interactions between them, the participating teams had to predict job postings that a user will interact with. 
+Given a large dataset from XING that consisted of anonymized user profiles, job postings, and interactions between them, the participating teams had to predict postings that a user will interact with. 
 
-The challenge ran for four months with a final 366 registered teams.
-The number of active teams were 119 and they have submitted together 4,232 solutions yielding in an impressive neck-and-neck race that was decided within the last days of the challenge.
+The challenge ran for four months with 366 registered teams.
+119 of those teams actively participated and submitted together 
+4,232 solutions yielding in an impressive neck-and-neck race 
+that was decided within the last days of the challenge.
 \end{abstract}
 
 
@@ -107,18 +110,17 @@ The number of active teams were 119 and they have submitted together 4,232 solut
 % We no longer use \terms command
 %\terms{Theory}
 
-\keywords{Recommender Systems; Data Mining Challenge; XING; Job Recommendation}
+\keywords{Recommender Systems; Data Mining Challenge; XING}
 }
 
 \section{Introduction}
 The ACM RecSys Challenge allows researchers and engineers around the world to jointly work on real-world recommender system problems in various domains such as social media~\cite{recsyschallenge:2014} or product recommendations~\cite{recsyschallenge:2015}. 
 In 2016 the challenge was dedicated to the problem of job recommendation\footnote{\url{http://2016.recsyschallenge.com}}~\cite{job:recommendations}. 
-We released a large dataset from XING\footnote{\url{http://xing.com}} that is a business-oriented social network with around 18~Million users world-wide and more than 10~Million users in Germany. 
+We released a dataset from XING\footnote{\url{http://xing.com}}---a business-oriented social network with around 18~Million users world-wide and more than 10~Million users in Germany. 
 
-XING supports people in discovering career opportunities, hence the job recommendation system is an essential part of the XING platform.
-The provided recommendations aim to satisfy the demands of both the job seekers who have certain preferences concerning their next career step and the recruiters who aim to hire the most appropriate candidate for a given job.
-In this challenge, we focused on the demands of the job seekers by defining the following task.
-
+XING supports people in discovering career opportunities. Job recommendations are therefore an essential part of the XING platform and its mobile apps.
+Those recommendations aim to satisfy the demands of both the job seekers who have certain preferences concerning their next career step and the recruiters who aim to hire the most appropriate candidate for a given job.
+In this challenge, we focused on the demands of the job seekers by defining the following task:
 {\em Given a XING user, the recommender had to predict those job postings that a user will positively interact with by clicking on it or bookmarking it.}
 
   
@@ -156,37 +158,41 @@ In this challenge, we focused on the demands of the job seekers by defining the 
 \end{figure*}
 
 We provided a training dataset featuring user profiles, job postings, and interactions that users performed on job posts.
-The dataset also incorporated user-item \emph{impressions}: we released information about job postings that were shown to users in the XING platform.
-The training data\footnote{\url{https://github.com/recsyschallenge/2016/blob/master/TrainingDataset.md}} contained 1,367,057 users and 1,358,098 items. 
+The dataset also incorporated user-item \emph{impressions}, i.e.~information about job postings that were shown to users.
+The training data\footnote{\url{https://github.com/recsyschallenge/2016/#data}} contained 1,367,057 users and 1,358,098 items. 
 Users and items were described by several similar attributes such as job categories, career level, industry, location, etc.
 In addition, the educational background and details about work experience were given for the users. 
 
-Around 12 weeks of implicit interaction data between the users and the items was released for training including
-(1) user \emph{clicks} on job postings, 
-(2) \emph{bookmarks} indicating that a user was intended in a given job and saved it for later,
-(3) \emph{replies} indicating that a user intended to apply for the job, and
-(4) \emph{deletes} when the user removed an item that was irrelevant for her.
+Around 12 weeks of interaction data between the users and the items was released for training including 
+including (1) \emph{clicks} on job postings, (2) \emph{bookmarks}, (3) \emph{replies} indicating that users intended to 
+apply for the job and (4) \emph{deletes} which corresponds to removing an item that the user no longer wants to see.
 Figure~\ref{fig:data-interactions} describes the characteristics of the different interactions.
 Two weeks of interactions for a set of 150,000 \emph{target users} were used as test data in order to evaluate the submitted solutions. 
 Figure~\ref{fig:data-interactions} also shows the distribution of that ground truth dataset. 
 
 
 \subsection{Anonymization}
-We intended to retain all the possibly useful information for the participating teams, while protecting the privacy of XING users.
-As a result, the released training dataset is a semi-synthetic sample of XING data.
-It is enriched with artificial users whose presence contributes to the anonymization.
-For example, the data incorporates artificial users that were generated by clustering real 
-users.
-%TODO this needs further explanation 
-Moreover, it contains only a fraction of XING users and job postings and not necessarily all the interactions of a given user were exported.
-Instead of releasing raw attribute values, we performed named entity recognition (e.g. for skills, job roles) and mapped raw strings to IDs.
-Synonyms such as "Java Software Developer" or "Java Software Engineer" were mapped to the same ID.
-For some of the users, we partly removed the attribute values to further anonymize their profiles.
-All timestamps in the dataset were shifted by a couple of weeks. The sequential order of the interactions was however not changed. 
+Anonymization of the training dataset was carried out with an iterative protector/attacker procedure. 
+We took a simple and straightforward approach to threat modeling: 
+The attacker profile was implicit the choice of a highly experienced Data Science team that 
+attempted to de-anonymize the data. At each step the dataset was further bleached, and additional 
+synthetic users were added. Then, tests were carried out to check if the dataset could be 
+de-anonymized by the attacker and also if the dataset supported training a recommender system 
+algorithm effective on a plain-text test set. This procedure ensured that enough information was 
+left in the data to make this to be a useful data set for solving the problem on the actual 
+plain-text data, while at the same time protecting the privacy of XING users. 
 
-\section{Experimental Setup and Results}
+The bleaching procedure involved replacing named entities with IDs, removing a selection of 
+user attribute values, and removing a selection of interactions. The relative ordering of the 
+interactions was maintained. Synthetic users were created by clustering real users. Further 
+protections included the obvious measure of including only a fraction of XING's users and job 
+postings in the dataset, and also protecting the dataset legally with a user agreement that 
+explicitly prohibits attempts to de-anonymize the dataset, share it, or use it for 
+non-academic purposes.
 
-We used a scoring function as evaluation measure that combines precision@k and recall@k\footnote{\url{https://github.com/recsyschallenge/2016/blob/master/EvaluationMeasure.md}}. 
+\section{Challenge Setup and Results}
+
+We used a scoring function as evaluation measure that combines precision@k and recall@k\footnote{\url{https://github.com/recsyschallenge/2016/#evaluation}}. 
 This evaluation measure was based on the key performance indicators that XING is using to monitor the quality of the job recommender system. 
 Each team was allowed to submit 5~solutions per day and solution files were allowed to feature at most 30~recommendations per user.
 A public leaderboard that was based on 30\% of the ground truth data immediately informed the teams about the performance of their algorithms after their submissions. 
@@ -205,7 +211,7 @@ The top solution achieved a score of 2,052,185 points that is 24.1\% of the best
 Figure~\ref{fig:results-overlap-xing} also shows that the top solution managed to include items that XING's system does not recommended.
 Hence, algorithms developed during the challenge seem to complement XING's recommender ensemble and are likely to have a significant impact on XING's future job recommendations. 
 
-\section*{Acknowledgments}
+\paragraph*{Acknowledgments}
 {\small
 The work leading to these results has received funding from the EU's 
 Seventh Framework Programme (FP7/2007-2013) under CrowdRec
@@ -222,12 +228,12 @@ F.~Abel.
 
 \bibitem{recsyschallenge:2015}
 D.~Ben-Shimon, A.~Tsikinovsky, M.~Friedmann, B.~Shapira, L.~Rokach, and J.~Hoerle.
-\newblock Recsys challenge 2015 and the yoochoose dataset.
+\newblock RecSys Challenge 2015 and the YOOCHOOSE Dataset.
 \newblock In {\em Proceedings of ACM RecSys 2015}, pages 357--358, 2015. ACM.
 
 \bibitem{recsyschallenge:2014}
 A.~Said, S.~Dooms, B.~Loni, and D.~Tikk.
-\newblock Recommender systems challenge 2014.
+\newblock Recommender Systems Challenge 2014.
 \newblock In {\em Proceedings of ACM RecSys 2014}, pages 387--388, 2014. ACM.
 
 \end{thebibliography}
