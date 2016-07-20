@@ -16,6 +16,12 @@ Pointers:
   + [Evaluation Measure](EvaluationMeasure.md)
   + [Simple baselines](Baselines.md)
 
+Data 
+----
+
+- Description of training data: [TrainingDataset.md](TrainingDataset.md)
+- Download training data (requires login): https://recsys.xing.com/data
+
 News
 -----
 
