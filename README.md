@@ -22,6 +22,11 @@ Data
 - Description of training data: **[TrainingDataset.md](TrainingDataset.md)**
 - Download training data (requires login): https://recsys.xing.com/data
 
+Evaluation
+----------
+
+Details about evaluation: [Evaluation Measure](EvaluationMeasure.md)
+
 News
 -----
 
